@@ -189,7 +189,7 @@ function App() {
   console.log(derivated)
 
   const filteredData = useMemo(() => {
-    const filtredName = politiciansList.filter((element) => element.name.toLowerCase().includes(value.toLowerCase()) || element.biography.toLowerCase().includes(value.toLowerCase()) || element.position.includes(selectValue))
+    const filtredName = politiciansList.filter((element) => element.name.toLowerCase().includes(value.toLowerCase()) || element.biography.toLowerCase().includes(value.toLowerCase()) && element.position.includes(selectValue))
     return filtredName
   }, [politiciansList, value, selectValue])
 
