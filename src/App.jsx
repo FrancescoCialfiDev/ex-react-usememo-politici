@@ -182,11 +182,12 @@ function App() {
 
   const derivated = politiciansList.reduce((acc, curr) => {
     if (!acc.some((element) => element === curr.position)) {
-      acc.push(curr.position)
+      return [...acc, curr.position]
     }
     return acc
   }, [])
   console.log(derivated)
+
 
   const filteredData = useMemo(() => {
     const filtredName = politiciansList.filter((element) => element.name.toLowerCase().includes(value.toLowerCase()) || element.biography.toLowerCase().includes(value.toLowerCase()) && element.position.includes(selectValue))
